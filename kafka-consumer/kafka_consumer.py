@@ -8,7 +8,7 @@ from datetime import datetime
 KAFKA_BROKER = 'localhost:9092'
 KAFKA_TOPIC = 'sensor-data'
 POSTGRES_CONFIG = {
-    'dbname': 'random_values',
+    'dbname': 'randomvalues',
     'user': 'pranav',
     'password': '12345',
     'host': 'localhost',
