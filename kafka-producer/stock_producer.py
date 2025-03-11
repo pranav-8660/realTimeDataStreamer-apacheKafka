@@ -10,7 +10,7 @@ KAFKA_BROKER="localhost:9092"
 
 producer = KafkaProducer(
     bootstrap_servers=KAFKA_BROKER,
-    value_serializer=lambda v:json.dumps(v).encode("UTF-8")
+    value_serializer=lambda v:json.dumps(v).encode("utf-8")
 )
 
 def fetch_stock_price():
@@ -39,5 +39,5 @@ if __name__ == "__main__":
         stock_data = fetch_stock_price()
         if stock_data:
             print(f"Stock data is fetched, sendind to kafka-broker this data-> {stock_data}")
-            producer.send(KAFKA_TOPIC,stock_data)
+            producer.send(KAFKA_TOPIC,value=stock_data)
         time.sleep(60)
