@@ -1,0 +1,11 @@
+#install kafka , i have done it in this directory-> kafka_2.13-3.6.0 so get into that directory->
+cd kafka_2.13-3.6.0
+#start zookeeper->
+bin/zookeeper-server-start.sh config/zookeeper.properties
+#start kafka-server->
+bin/kafka-server-start.sh config/server.properties
+#now that zookeeper and kafka are running, create a kafka-topic->
+bin/kafka-topics.sh --create --topic stock-prices --bootstrap-server localhost:9092 --partitions 3 --replication-factor=1
+
+
+
