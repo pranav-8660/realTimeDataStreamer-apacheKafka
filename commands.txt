@@ -6,6 +6,8 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
 #now that zookeeper and kafka are running, create a kafka-topic->
 bin/kafka-topics.sh --create --topic stock-prices --bootstrap-server localhost:9092 --partitions 3 --replication-factor=1
+#install the python library for kafka->
+pip install kafka-python requests pandas
 
 
 
